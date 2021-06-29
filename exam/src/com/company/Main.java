@@ -3,12 +3,11 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Ringing ringing= new Ringing();
+        Coins coins= new Coins();
         Paper paper = new Paper();
         RightPocket rightPocket = new RightPocket(paper);
-        LeftPocket leftPocket = new LeftPocket(ringing);
-        System.out.println(rightPocket);
-        System.out.println(leftPocket);
-
+        LeftPocket leftPocket = new LeftPocket(coins);
+        Person me = new Person(leftPocket,rightPocket);
+        System.out.println(me);
     }
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Ringing {
+public class Coins implements Ringable {
     public String sound(){
        return  "ring ring";
     }

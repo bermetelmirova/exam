@@ -1,16 +1,15 @@
 package com.company;
 
-public class Paper {
-    private boolean burn = true;
-
+public class Paper extends AbstractPaper{
     public Paper() {
     }
 
     public Paper(boolean burn) {
-        this.burn = burn;
+        super(burn);
     }
 
-    public boolean isBurn() {
-        return burn;
+    @Override
+    public String toString() {
+        return "бумажка с номером телефона";
     }
 }

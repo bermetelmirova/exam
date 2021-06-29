@@ -1,21 +1,21 @@
 package com.company;
 
 public class LeftPocket {
-    Ringing ringing;
+    Coins coins;
 
     public LeftPocket() {
     }
 
-    public LeftPocket(Ringing ringing) {
-        this.ringing = ringing;
+    public LeftPocket(Coins ringing) {
+        this.coins = ringing;
     }
 
-    public Ringing getRinging() {
-        return ringing;
+    public Coins getRinging() {
+        return coins;
     }
 
     @Override
     public String toString() {
-        return "В левом кормане что-то звенит " + ringing.sound() + "\n";
+        return "В левом кормане что-то звенит " + coins.sound() + "\n";
     }
 }
