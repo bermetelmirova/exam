@@ -16,17 +16,13 @@ public class Main {
     }
 
     public static void addPerson(Person person, LinkedList<Person> people) throws Exception {
-        boolean isUnique = true;
+
         for (int i = 0; i < people.size(); i++) {
-            if (person.equals(people.get(i))) {
-                isUnique = false;
+            if (people.contains(person)) {
+                people.add(person);
+            } else {
+                throw new Exception("Дубликат!");
             }
         }
-        if (isUnique) {
-            people.add(person);
-        } else {
-            throw new Exception("Дубликат!");
-        }
-
     }
 }
