@@ -27,7 +27,7 @@ public class Main {
             }
         }
         System.out.println(eventArr);
-        }//можно через LinkedHashSet добавить по порядку
-    }
+    }//можно через LinkedHashSet добавить по порядку
 }
+
 
