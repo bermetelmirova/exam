@@ -1,0 +1,6 @@
+create table news(
+id serial primary key,
+headline varchar not null,
+text_news text not null,
+time_of_publication timestamp not null);
+select * from news n 
