@@ -1,0 +1,54 @@
+create table routes(
+id_route serial primary key,
+code_route integer not null unique,
+start_point varchar not null,
+finish_point varchar not null
+);
+
+create table buses(
+id_bus serial primary key,
+bus_number varchar not null unique,
+route integer references routes(id_route)
+);
+
+create table drivers(
+id_driver serial primary key,
+full_name varchar not null
+);
+
+create table log_note(
+id serial primary key,
+id_driver integer references drivers(id_driver),
+id_bus integer references buses(id_bus),
+departure_time timestamp not null
+);
+
+
+insert into routes(code_route, start_point, finish_point)
+values(102, '11 микрорайон', 'Дордой'),
+(204, '12 микрорайон', 'Ак Ордо'),
+(212, 'Асанбай', 'Кызыл-Аскер')
+
+select * from routes
+
+insert into buses(bus_number, route)
+values('123 JHT', 4),
+('456 ASD', 5),
+('564 UBN', 6)
+
+select * from buses
+
+insert into drivers(full_name)
+values('Сарыбаев Максат'),
+('Жоломанов Эрзат'),
+('Айдарбеков Таалай')
+
+select * from drivers
+
+insert into log_note(id_driver, id_bus, departure_time)
+values(1, 4, '2021-12-01 14:20'),
+(2, 5, '2021-12-01 15:20'),
+(3, 6, '2021-12-01 16:20')
+
+select d.full_name, b.bus_number, r.code_route, l.departure_time from log_note l join drivers d on l.id_driver = d.id_driver 
+join buses b on l.id_bus = b.id_bus join routes r on r.id_route = b.route
