@@ -27,7 +27,6 @@ public class User {
             str += "Уважаемый \t";
         }
         int age = 2021 - birtYear;
-
         if (age == 11 || age == 14) old = "\t лет";
         else if (age % 10 >= 2 && age % 10 <= 4) old = "\t года";
         else if (age % 10 == 1) old = "\t год";
